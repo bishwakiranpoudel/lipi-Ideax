@@ -39,6 +39,20 @@ dependencies:
   cloud_firestore: ^4.9.1
   firebase_storage: ^11.2.6
   shared_preferences: ^2.2.1
+  flutter_signature_pad: ^3.0.1
+  path_provider: ^2.0.5
+  syncfusion_flutter_signaturepad: ^23.1.36
+  permission_handler: ^11.0.0
+  flutter_sound: ^8.1.9
+  assets_audio_player: ^3.0.3+3
+  intl: ^0.18.1
+  record: ^4.4.4
+  audioplayers: ^5.1.0
+  http: ^0.13.3
+  http_parser: ^4.0.2
+  flutter_svg: ^0.22.0
+  google_fonts: ^4.0.4
+  file_picker: ^4.2.0
 
 dev_dependencies:
   flutter_test:
