@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/colors.dart';
 import 'package:frontend/screens/dashboard.dart';
+import 'package:frontend/screens/profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     DashboardScreen(),
     Text("Issues Page"),
     Text("Change Requests Page"),
-    Text("Change Requests Page"),
+    ProfileScreen(),
   ];
 
   final List<String> _names = [
