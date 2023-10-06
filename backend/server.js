@@ -27,8 +27,18 @@ app.use(express.json());
 
 // Define routes
 
+// Include the character routes
 const characterRoutes = require('./routes/characterRoutes')(bucket, upload, db);
 app.use('/api/characters', characterRoutes);
+
+
+// Include the font generation route
+const fontRoutes = require('./routes/fontRoutes')(bucket, db);
+app.use('/api/fonts', fontRoutes);
+
+// Include the dataset generation route
+const datasetRoutes = require('./routes/datasetRoutes')(bucket, db);
+app.use('/api/datasets', datasetRoutes);
 
 // Start the server
 app.listen(port, () => {
