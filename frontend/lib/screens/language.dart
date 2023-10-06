@@ -2,8 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/colors.dart';
-
-import 'package:frontend/screens/character.dart';
+import 'package:frontend/screens/fonts.dart';
 
 class LanguageDocumentScreen extends StatefulWidget {
   final String documentId;
@@ -235,17 +234,7 @@ class _ElementsTabState extends State<ElementsTab> {
                                 fontSize: 16.0,
                               ),
                             ),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CharacterScreen(
-                                    changer: widget.changer,
-                                    languageId: widget.documentId,
-                                  ),
-                                ),
-                              );
-                            },
+                            onTap: () {},
                           ),
                           Divider(),
                           ListTile(
@@ -290,7 +279,17 @@ class _ElementsTabState extends State<ElementsTab> {
                                 fontSize: 16.0,
                               ),
                             ),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FontsScreen(
+                                    changer: widget.changer,
+                                    languageId: widget.documentId,
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
