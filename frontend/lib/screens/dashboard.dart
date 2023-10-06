@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/colors.dart';
+import 'package:frontend/screens/addLanguage.dart';
+import 'package:frontend/screens/language.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key});
@@ -156,7 +158,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                         Icons.search,
                                         color: Colors.white,
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        // Handle search button click here
+                                        // You can use the entered search query to filter your data
+                                      },
                                     ),
                                   ),
                                 ),
@@ -204,7 +209,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ),
                       // Add Language Button
                       ElevatedButton(
-                        onPressed: () async {},
+                        onPressed: () async {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddLanguageScreen(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: AppColors.primaryColor,
                           padding: EdgeInsets.symmetric(
@@ -261,7 +273,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   fontSize: 14.0,
                                 ),
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        LanguageDocumentScreen(
+                                      changer: false,
+                                      documentId: documentId,
+                                    ),
+                                  ),
+                                );
+                              },
                             ),
                           );
                         },
