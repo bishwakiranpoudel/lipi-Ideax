@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/colors.dart';
-
-import 'package:frontend/screens/addprofile.dart';
+import 'package:frontend/screens/dashboard.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,9 +12,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
+    DashboardScreen(),
     Text("Issues Page"),
     Text("Change Requests Page"),
-    Text("Issues Page"),
     Text("Change Requests Page"),
   ];
 
