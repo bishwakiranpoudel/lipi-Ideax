@@ -27,6 +27,8 @@ app.use(express.json());
 
 // Define routes
 
+const characterRoutes = require('./routes/characterRoutes')(bucket, upload, db);
+app.use('/api/characters', characterRoutes);
 
 // Start the server
 app.listen(port, () => {
