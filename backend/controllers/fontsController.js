@@ -19,11 +19,9 @@ module.exports = (bucket, db) => {
                 fs.unlinkSync(currentPath);
               }
             });
-      
             // Delete the empty directory
             fs.rmdirSync(directoryPath);
           } else {
-            // It's a file, not a directory, so delete it directly
             fs.unlinkSync(directoryPath);
           }
         }
@@ -121,6 +119,7 @@ module.exports = (bucket, db) => {
     });
   };
   
+  // Convert SvgFont to .ttf file format 
   const convertSvgFontToTtf = async (id) => {
     return new Promise((resolve, reject) => {
       const svgFont = fs.readFileSync('font.svg', 'utf8');
@@ -209,11 +208,7 @@ file.getSignedUrl({
   })
   .catch(error => {
     console.error('Error generating download URL:', error);
-  });
-
-          
-  
-         
+  });        
         })
         .catch((error) => {
           console.error('Error uploading file:', error);
@@ -227,6 +222,5 @@ file.getSignedUrl({
 
   return {
     createFont,
-    // Other controller functions
   };
 };
