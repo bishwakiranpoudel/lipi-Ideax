@@ -10,7 +10,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AddProfileScreen extends StatefulWidget {
-  const AddProfileScreen({Key? key});
+  const AddProfileScreen({
+    Key? key,
+  });
 
   @override
   State<AddProfileScreen> createState() => _AddProfileScreenState();
