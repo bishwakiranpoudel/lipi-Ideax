@@ -166,7 +166,7 @@ class _AddWordsScreenState extends State<AddWordsScreen> {
       // Create a TextStyle with the custom font
       final customFont = TextStyle(
         fontFamily: widget.languageId,
-        fontSize: 16.0,
+        fontSize: 20.0,
       );
 
       // Set the customFont to the _customFont variable
