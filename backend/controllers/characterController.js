@@ -6,7 +6,10 @@ const { v4: uuidv4 } = require('uuid');
 module.exports = (bucket, db) => {
   function processImage(imageFile) {
     return new Promise((resolve, reject) => {
-      const potraceOptions = {};
+      const potraceOptions = {
+        turdsize: 0.5,      
+        opttolerance: 0.05,
+      };
 
       Jimp.read(imageFile.buffer)
         .then((image) => {
