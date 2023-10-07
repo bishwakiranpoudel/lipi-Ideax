@@ -3,7 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/colors.dart';
 import 'package:frontend/screens/character.dart';
+import 'package:frontend/screens/datasets.dart';
 import 'package:frontend/screens/fonts.dart';
+import 'package:frontend/screens/updateLanguageDetails.dart';
 import 'package:frontend/screens/words.dart';
 
 class LanguageDocumentScreen extends StatefulWidget {
@@ -187,7 +189,16 @@ class _ElementsTabState extends State<ElementsTab> {
                     ),
                     if (languageData['maintainer'] == uid)
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UpdateLanguageDetials(
+                                languageId: widget.documentId,
+                              ),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: AppColors.primaryColor,
                           padding: EdgeInsets.symmetric(
@@ -286,7 +297,17 @@ class _ElementsTabState extends State<ElementsTab> {
                                 fontSize: 16.0,
                               ),
                             ),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DatasetsScreen(
+                                    changer: widget.changer,
+                                    languageId: widget.documentId,
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                           Divider(),
                           ListTile(
