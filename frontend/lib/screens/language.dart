@@ -2,9 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/colors.dart';
+import 'package:frontend/screens/addIssues.dart';
+import 'package:frontend/screens/changeRequestsDocumentScreen.dart';
 import 'package:frontend/screens/character.dart';
 import 'package:frontend/screens/datasets.dart';
 import 'package:frontend/screens/fonts.dart';
+import 'package:frontend/screens/issueDetailScreen.dart';
+import 'package:frontend/screens/mergeCRScreen.dart';
 import 'package:frontend/screens/updateLanguageDetails.dart';
 import 'package:frontend/screens/words.dart';
 
@@ -119,6 +123,14 @@ class _ElementsTabState extends State<ElementsTab> {
           .update(additionalData);
 
 // navigate to the new document in target collection
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ChangeRequestDocumentScreen(
+            documentId: documentId,
+          ),
+        ),
+      );
     }
 
     void addContributorToDocument() {
@@ -421,7 +433,17 @@ class _ChangeRequestTabState extends State<ChangeRequestTab> {
                             fontSize: 14.0,
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MergeRequestsScreen(
+                                      changeRequestId:
+                                          document['changerequest'],
+                                      languageId: widget.languageId,
+                                    )),
+                          );
+                        },
                       ),
                     );
                   },
@@ -462,7 +484,15 @@ class _IssuesTabState extends State<IssuesTab> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddIssueScreen(
+                                languageId: widget.languageId,
+                              )),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: AppColors.primaryColor,
                     padding: EdgeInsets.symmetric(
@@ -518,7 +548,16 @@ class _IssuesTabState extends State<IssuesTab> {
                             fontSize: 14.0,
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => IssueDetailScreen(
+                                      issueId: document.id,
+                                      languageId: widget.languageId,
+                                    )),
+                          );
+                        },
                       ),
                     );
                   },
