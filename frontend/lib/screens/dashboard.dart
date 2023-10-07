@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend/colors.dart';
 import 'package:frontend/screens/addLanguage.dart';
 import 'package:frontend/screens/language.dart';
+import 'package:frontend/screens/search.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key});
@@ -159,8 +160,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                         color: Colors.white,
                                       ),
                                       onPressed: () {
-                                        // Handle search button click here
-                                        // You can use the entered search query to filter your data
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => SearchScreen(
+                                              initialQueryString:
+                                                  _searchController.text,
+                                            ),
+                                          ),
+                                        );
                                       },
                                     ),
                                   ),
